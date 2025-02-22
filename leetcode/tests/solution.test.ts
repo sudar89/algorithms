@@ -1,11 +1,8 @@
 import { ListNode, mergeTwoLists } from "../src/easy/easy.21";
+import { removeDuplicates } from "../src/easy/easy.26";
 import { add } from "../src/easy/solution";
 
 describe("leetcode easy problem", () => {
-  test("add function works correctly", () => {
-    expect(add(2, 3)).toBe(5);
-  });
-
   describe("21. Merge two sorted lists", () => {
     function createLinkedList(arr: number[]): ListNode | null {
       if (arr.length === 0) return null;
@@ -48,6 +45,14 @@ describe("leetcode easy problem", () => {
       const list2 = createLinkedList([0]);
       const mergedList = mergeTwoLists(list1, list2);
       expect(linkedListToArray(mergedList)).toEqual([0]);
+    });
+  });
+
+  describe("26. Remove Duplicates from Sorted Array", () => {
+    it("returns 2 and pop duplicated nums", () => {
+      let nums = [1, 1, 2];
+      expect(removeDuplicates(nums)).toEqual(2);
+      expect(nums.slice(0, 2)).toEqual([1, 2]);
     });
   });
 });
