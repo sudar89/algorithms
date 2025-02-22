@@ -1,5 +1,6 @@
 import { ListNode, mergeTwoLists } from "../src/easy/easy.21";
 import { removeDuplicates } from "../src/easy/easy.26";
+import { removeElement } from "../src/easy/easy.27";
 import { add } from "../src/easy/solution";
 
 describe("leetcode easy problem", () => {
@@ -53,6 +54,21 @@ describe("leetcode easy problem", () => {
       let nums = [1, 1, 2];
       expect(removeDuplicates(nums)).toEqual(2);
       expect(nums.slice(0, 2)).toEqual([1, 2]);
+    });
+  });
+
+  describe("27. Remove Element", () => {
+    it("returns 2", () => {
+      const input = [3, 2, 2, 3];
+      const ret = removeElement(input, 3);
+      expect(ret).toEqual(2);
+      expect(input.slice(0, ret)).toEqual([2, 2]);
+    });
+    it("returns 5", () => {
+      const input = [0, 1, 2, 2, 3, 0, 4, 2];
+      const ret = removeElement(input, 2);
+      expect(ret).toEqual(5);
+      expect(input.slice(0, ret)).toEqual([0, 1, 3, 0, 4]);
     });
   });
 });
