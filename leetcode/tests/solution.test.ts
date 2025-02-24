@@ -1,6 +1,7 @@
 import { ListNode, mergeTwoLists } from "../src/easy/easy.21";
 import { removeDuplicates } from "../src/easy/easy.26";
 import { removeElement } from "../src/easy/easy.27";
+import { lengthOfLastWord } from "../src/easy/easy.58";
 import { add } from "../src/easy/solution";
 
 describe("leetcode easy problem", () => {
@@ -69,6 +70,18 @@ describe("leetcode easy problem", () => {
       const ret = removeElement(input, 2);
       expect(ret).toEqual(5);
       expect(input.slice(0, ret)).toEqual([0, 1, 3, 0, 4]);
+    });
+  });
+
+  describe("58. Lenght of Last Word", () => {
+    it("return 5", () => {
+      expect(lengthOfLastWord("Hello World")).toEqual(5);
+    });
+    it("return 4", () => {
+      expect(lengthOfLastWord("   fly me   to   the moon  ")).toEqual(4);
+    });
+    it("return 6", () => {
+      expect(lengthOfLastWord("luffy is still joyboy")).toEqual(6);
     });
   });
 });
