@@ -1,6 +1,7 @@
 import { ListNode, mergeTwoLists } from "../src/easy/easy.21";
 import { removeDuplicates } from "../src/easy/easy.26";
 import { removeElement } from "../src/easy/easy.27";
+import { hasSameDigits } from "../src/easy/easy.3461";
 import { lengthOfLastWord } from "../src/easy/easy.58";
 import { add } from "../src/easy/solution";
 
@@ -82,6 +83,15 @@ describe("leetcode easy problem", () => {
     });
     it("return 6", () => {
       expect(lengthOfLastWord("luffy is still joyboy")).toEqual(6);
+    });
+  });
+
+  describe("easy 3461. Check If Digits Are Equal in String After Operations ", () => {
+    it("true", () => {
+      expect(hasSameDigits("3902")).toBeTruthy();
+    });
+    it("false", () => {
+      expect(hasSameDigits("34789")).toBeFalsy();
     });
   });
 });
