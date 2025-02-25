@@ -1,9 +1,9 @@
 import { ListNode, mergeTwoLists } from "../src/easy/easy.21";
 import { removeDuplicates } from "../src/easy/easy.26";
 import { removeElement } from "../src/easy/easy.27";
+import { hasSpecialSubstring } from "../src/easy/easy.3456";
 import { hasSameDigits } from "../src/easy/easy.3461";
 import { lengthOfLastWord } from "../src/easy/easy.58";
-import { add } from "../src/easy/solution";
 
 describe("leetcode easy problem", () => {
   describe("21. Merge two sorted lists", () => {
@@ -92,6 +92,15 @@ describe("leetcode easy problem", () => {
     });
     it("false", () => {
       expect(hasSameDigits("34789")).toBeFalsy();
+    });
+  });
+
+  describe("easy 3456. Find Special Substring of Lenght K", () => {
+    it("true", () => {
+      expect(hasSpecialSubstring("aaabaaa", 3)).toBeTruthy();
+    });
+    it("true", () => {
+      expect(hasSpecialSubstring("abc", 2)).toBeFalsy();
     });
   });
 });
