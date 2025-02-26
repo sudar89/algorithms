@@ -1,3 +1,4 @@
+import { maxProfit } from "../../../src/TopInterview150/ArrayAndString/121";
 import { merge } from "../../../src/TopInterview150/ArrayAndString/88";
 
 describe("Top Interview 150", () => {
@@ -28,6 +29,15 @@ describe("Top Interview 150", () => {
         const n = 1;
         merge(nums1, m, nums2, n);
         expect(nums1).toEqual([1]);
+      });
+    });
+
+    describe("medium 121. Best Time to Buy and Sell Stock", () => {
+      it("should return 5 when the optimal buy and sell yields a profit of 5", () => {
+        expect(maxProfit([7, 1, 5, 3, 6, 4])).toEqual(5);
+      });
+      it("should return 0 when no profit can be made", () => {
+        expect(maxProfit([7, 6, 4, 3, 1])).toEqual(0);
       });
     });
   });
