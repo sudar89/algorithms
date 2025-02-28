@@ -1,4 +1,5 @@
 import { maxProfit } from "../../../src/TopInterview150/ArrayAndString/121";
+import { romanToInt } from "../../../src/TopInterview150/ArrayAndString/13";
 import { merge } from "../../../src/TopInterview150/ArrayAndString/88";
 
 describe("Top Interview 150", () => {
@@ -38,6 +39,20 @@ describe("Top Interview 150", () => {
       });
       it("should return 0 when no profit can be made", () => {
         expect(maxProfit([7, 6, 4, 3, 1])).toEqual(0);
+      });
+    });
+
+    describe("Easy 13: Roman to Integer", () => {
+      it("should return 3 for input 'III'", () => {
+        expect(romanToInt("III")).toEqual(3);
+      });
+
+      it("should return 58 for input 'LVIII'", () => {
+        expect(romanToInt("LVIII")).toEqual(58);
+      });
+
+      it("should return 1994 for input 'MCMXCIV'", () => {
+        expect(romanToInt("MCMXCIV")).toEqual(1994);
       });
     });
   });
