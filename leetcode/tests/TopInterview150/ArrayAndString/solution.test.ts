@@ -1,5 +1,6 @@
 import { maxProfit } from "../../../src/TopInterview150/ArrayAndString/121";
 import { romanToInt } from "../../../src/TopInterview150/ArrayAndString/13";
+import { removeElement } from "../../../src/TopInterview150/ArrayAndString/27";
 import { removeDuplicates } from "../../../src/TopInterview150/ArrayAndString/80";
 import { merge } from "../../../src/TopInterview150/ArrayAndString/88";
 
@@ -83,6 +84,21 @@ describe("Top Interview 150", () => {
         const result = removeDuplicates(input);
         expect(result).toEqual(2);
         expect(input.slice(0, result)).toEqual([1, 1]);
+      });
+    });
+
+    describe("Easy 27: Remove Element", () => {
+      it("remove 3", () => {
+        const input: number[] = [3, 2, 2, 3];
+        const ret = removeElement(input, 3);
+        expect(ret).toEqual(2);
+        expect(input.slice(0, ret)).toEqual([2, 2]);
+      });
+      it("remove 2", () => {
+        const input: number[] = [0, 1, 2, 2, 3, 0, 4, 2];
+        const ret = removeElement(input, 2);
+        expect(ret).toEqual(5);
+        expect(input.slice(0, ret)).toEqual([0, 1, 4, 0, 3]);
       });
     });
   });
