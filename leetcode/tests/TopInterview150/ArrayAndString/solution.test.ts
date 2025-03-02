@@ -88,17 +88,32 @@ describe("Top Interview 150", () => {
     });
 
     describe("Easy 27: Remove Element", () => {
-      it("remove 3", () => {
-        const input: number[] = [3, 2, 2, 3];
-        const ret = removeElement(input, 3);
-        expect(ret).toEqual(2);
-        expect(input.slice(0, ret)).toEqual([2, 2]);
+      it("removes all instances of 3", () => {
+        const input = [3, 2, 2, 3];
+        const result = removeElement(input, 3);
+        expect(result).toEqual(2);
+        expect(input.slice(0, result).sort()).toEqual([2, 2]);
       });
-      it("remove 2", () => {
-        const input: number[] = [0, 1, 2, 2, 3, 0, 4, 2];
-        const ret = removeElement(input, 2);
-        expect(ret).toEqual(5);
-        expect(input.slice(0, ret)).toEqual([0, 1, 4, 0, 3]);
+
+      it("removes all instances of 2", () => {
+        const input = [0, 1, 2, 2, 3, 0, 4, 2];
+        const result = removeElement(input, 2);
+        expect(result).toEqual(5);
+        expect(input.slice(0, result).sort()).toEqual([0, 0, 1, 3, 4]);
+      });
+
+      it("handles an array with no occurrences", () => {
+        const input = [1, 3, 5, 7];
+        const result = removeElement(input, 2);
+        expect(result).toEqual(4);
+        expect(input.slice(0, result)).toEqual([1, 3, 5, 7]);
+      });
+
+      it("handles an empty array", () => {
+        const input: number[] = [];
+        const result = removeElement(input, 1);
+        expect(result).toEqual(0);
+        expect(input).toEqual([]);
       });
     });
   });
