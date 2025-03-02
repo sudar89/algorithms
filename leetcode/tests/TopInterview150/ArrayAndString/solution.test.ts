@@ -1,5 +1,6 @@
 import { maxProfit } from "../../../src/TopInterview150/ArrayAndString/121";
 import { romanToInt } from "../../../src/TopInterview150/ArrayAndString/13";
+import { removeDuplicates } from "../../../src/TopInterview150/ArrayAndString/80";
 import { merge } from "../../../src/TopInterview150/ArrayAndString/88";
 
 describe("Top Interview 150", () => {
@@ -53,6 +54,35 @@ describe("Top Interview 150", () => {
 
       it("should return 1994 for input 'MCMXCIV'", () => {
         expect(romanToInt("MCMXCIV")).toEqual(1994);
+      });
+    });
+    describe("Medium 80: Remove Duplicates from Sorted Array II", () => {
+      it("removes duplicates allowing at most twice per element", () => {
+        const input = [1, 1, 1, 2, 2, 3];
+        const result = removeDuplicates(input);
+        expect(result).toEqual(5);
+        expect(input.slice(0, result)).toEqual([1, 1, 2, 2, 3]);
+      });
+
+      it("removes duplicates from a larger input", () => {
+        const input = [0, 0, 1, 1, 1, 1, 2, 3, 3];
+        const result = removeDuplicates(input);
+        expect(result).toEqual(7);
+        expect(input.slice(0, result)).toEqual([0, 0, 1, 1, 2, 3, 3]);
+      });
+
+      it("handles an already unique array", () => {
+        const input = [1, 2, 3, 4, 5];
+        const result = removeDuplicates(input);
+        expect(result).toEqual(5);
+        expect(input.slice(0, result)).toEqual([1, 2, 3, 4, 5]);
+      });
+
+      it("handles an array with all elements the same", () => {
+        const input = [1, 1, 1, 1, 1, 1, 1];
+        const result = removeDuplicates(input);
+        expect(result).toEqual(2);
+        expect(input.slice(0, result)).toEqual([1, 1]);
       });
     });
   });
