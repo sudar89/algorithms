@@ -1,5 +1,6 @@
 import { maxProfit } from "../../../src/TopInterview150/ArrayAndString/121";
 import { romanToInt } from "../../../src/TopInterview150/ArrayAndString/13";
+import { rotate } from "../../../src/TopInterview150/ArrayAndString/189";
 import { removeDuplicates26 } from "../../../src/TopInterview150/ArrayAndString/26";
 import { removeElement } from "../../../src/TopInterview150/ArrayAndString/27";
 import { removeDuplicates } from "../../../src/TopInterview150/ArrayAndString/80";
@@ -145,6 +146,38 @@ describe("Top Interview 150", () => {
         const ret = removeDuplicates26(input);
         expect(ret).toEqual(1);
         expect(input.slice(0, ret)).toEqual([2]);
+      });
+    });
+
+    describe("Medium 189: Rotate Array", () => {
+      it("rotates an array of length 7 by 3 positions", () => {
+        const nums = [1, 2, 3, 4, 5, 6, 7];
+        rotate(nums, 3);
+        expect(nums).toEqual([5, 6, 7, 1, 2, 3, 4]);
+      });
+
+      it("rotates an array of length 4 by 2 positions", () => {
+        const nums = [-1, -100, 3, 99];
+        rotate(nums, 2);
+        expect(nums).toEqual([3, 99, -1, -100]);
+      });
+
+      it("handles k larger than array length", () => {
+        const nums = [1, 2, 3, 4, 5];
+        rotate(nums, 7); // k = 7 → 실제로는 k % 5 = 2만큼 회전
+        expect(nums).toEqual([4, 5, 1, 2, 3]);
+      });
+
+      it("handles k as a multiple of array length (no change)", () => {
+        const nums = [1, 2, 3, 4, 5, 6];
+        rotate(nums, 6); // k = 6 → 배열 크기와 같으므로 변화 없음
+        expect(nums).toEqual([1, 2, 3, 4, 5, 6]);
+      });
+
+      it("handles an array of length 1 (no change)", () => {
+        const nums = [10];
+        rotate(nums, 3); // k가 커도 길이가 1이면 그대로
+        expect(nums).toEqual([10]);
       });
     });
   });
