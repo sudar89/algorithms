@@ -1,5 +1,6 @@
 import { maxProfit } from "../../../src/TopInterview150/ArrayAndString/121";
 import { romanToInt } from "../../../src/TopInterview150/ArrayAndString/13";
+import { majorityElement } from "../../../src/TopInterview150/ArrayAndString/169";
 import { rotate } from "../../../src/TopInterview150/ArrayAndString/189";
 import { removeDuplicates26 } from "../../../src/TopInterview150/ArrayAndString/26";
 import { removeElement } from "../../../src/TopInterview150/ArrayAndString/27";
@@ -178,6 +179,15 @@ describe("Top Interview 150", () => {
         const nums = [10];
         rotate(nums, 3); // k가 커도 길이가 1이면 그대로
         expect(nums).toEqual([10]);
+      });
+    });
+
+    describe("Easy 169: Majority Element", () => {
+      it("should return 3", () => {
+        expect(majorityElement([3, 2, 3])).toEqual(3);
+      });
+      it("should return 2", () => {
+        expect(majorityElement([2, 2, 1, 1, 1, 2, 2])).toEqual(2);
       });
     });
   });
