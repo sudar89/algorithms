@@ -1,4 +1,5 @@
 import { maxProfit } from "../../../src/TopInterview150/ArrayAndString/121";
+import { maxProfit2 } from "../../../src/TopInterview150/ArrayAndString/122";
 import { romanToInt } from "../../../src/TopInterview150/ArrayAndString/13";
 import { majorityElement } from "../../../src/TopInterview150/ArrayAndString/169";
 import { rotate } from "../../../src/TopInterview150/ArrayAndString/189";
@@ -188,6 +189,18 @@ describe("Top Interview 150", () => {
       });
       it("should return 2", () => {
         expect(majorityElement([2, 2, 1, 1, 1, 2, 2])).toEqual(2);
+      });
+    });
+
+    describe("Medium 122: Best Time to Buy and Sell Stock II", () => {
+      it("", () => {
+        expect(maxProfit2([7, 1, 5, 3, 6, 4])).toEqual(7);
+      });
+      it("", () => {
+        expect(maxProfit2([1, 2, 3, 4, 5])).toEqual(4);
+      });
+      it("", () => {
+        expect(maxProfit2([7, 6, 4, 3, 1])).toEqual(0);
       });
     });
   });
