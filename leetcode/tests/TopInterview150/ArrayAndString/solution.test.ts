@@ -5,6 +5,7 @@ import { majorityElement } from "../../../src/TopInterview150/ArrayAndString/169
 import { rotate } from "../../../src/TopInterview150/ArrayAndString/189";
 import { removeDuplicates26 } from "../../../src/TopInterview150/ArrayAndString/26";
 import { removeElement } from "../../../src/TopInterview150/ArrayAndString/27";
+import { hIndex } from "../../../src/TopInterview150/ArrayAndString/274";
 import { jump } from "../../../src/TopInterview150/ArrayAndString/45";
 import { canJump } from "../../../src/TopInterview150/ArrayAndString/55";
 import { removeDuplicates } from "../../../src/TopInterview150/ArrayAndString/80";
@@ -242,6 +243,28 @@ describe("Top Interview 150", () => {
 
       it("handles early stopping", () => {
         expect(jump([2, 3, 0, 1, 4])).toEqual(2);
+      });
+    });
+
+    describe("Medium 274: H-Index", () => {
+      it("returns the correct H-Index for a standard case", () => {
+        expect(hIndex([3, 0, 6, 1, 5])).toEqual(3);
+      });
+
+      it("returns the correct H-Index when values are small", () => {
+        expect(hIndex([1, 3, 1])).toEqual(1);
+      });
+
+      it("returns the correct H-Index when all values are high", () => {
+        expect(hIndex([10, 8, 5, 4, 3])).toEqual(4);
+      });
+
+      it("returns 0 when all citations are 0", () => {
+        expect(hIndex([0, 0, 0, 0])).toEqual(0);
+      });
+
+      it("returns 1 when there is only one highly cited paper", () => {
+        expect(hIndex([100])).toEqual(1);
       });
     });
   });
