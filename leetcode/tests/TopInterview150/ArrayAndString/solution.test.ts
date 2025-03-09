@@ -5,6 +5,7 @@ import { majorityElement } from "../../../src/TopInterview150/ArrayAndString/169
 import { rotate } from "../../../src/TopInterview150/ArrayAndString/189";
 import { removeDuplicates26 } from "../../../src/TopInterview150/ArrayAndString/26";
 import { removeElement } from "../../../src/TopInterview150/ArrayAndString/27";
+import { jump } from "../../../src/TopInterview150/ArrayAndString/45";
 import { canJump } from "../../../src/TopInterview150/ArrayAndString/55";
 import { removeDuplicates } from "../../../src/TopInterview150/ArrayAndString/80";
 import { merge } from "../../../src/TopInterview150/ArrayAndString/88";
@@ -224,6 +225,23 @@ describe("Top Interview 150", () => {
 
       it("returns false for early stopping case", () => {
         expect(canJump([1, 0, 0, 0])).toEqual(false);
+      });
+    });
+    describe("Medium 45: Jump Game II", () => {
+      it("returns minimum jumps to reach the last index", () => {
+        expect(jump([2, 3, 1, 1, 4])).toEqual(2);
+      });
+
+      it("handles arrays with only one element", () => {
+        expect(jump([0])).toEqual(0);
+      });
+
+      it("handles already sorted jumps", () => {
+        expect(jump([1, 2, 3, 4, 5])).toEqual(3);
+      });
+
+      it("handles early stopping", () => {
+        expect(jump([2, 3, 0, 1, 4])).toEqual(2);
       });
     });
   });
