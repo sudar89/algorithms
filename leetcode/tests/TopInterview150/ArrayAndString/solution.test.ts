@@ -5,6 +5,7 @@ import { majorityElement } from "../../../src/TopInterview150/ArrayAndString/169
 import { rotate } from "../../../src/TopInterview150/ArrayAndString/189";
 import { removeDuplicates26 } from "../../../src/TopInterview150/ArrayAndString/26";
 import { removeElement } from "../../../src/TopInterview150/ArrayAndString/27";
+import { canJump } from "../../../src/TopInterview150/ArrayAndString/55";
 import { removeDuplicates } from "../../../src/TopInterview150/ArrayAndString/80";
 import { merge } from "../../../src/TopInterview150/ArrayAndString/88";
 
@@ -201,6 +202,28 @@ describe("Top Interview 150", () => {
       });
       it("", () => {
         expect(maxProfit2([7, 6, 4, 3, 1])).toEqual(0);
+      });
+    });
+
+    describe("Medium 55: Jump Game", () => {
+      it("returns true for reachable last index", () => {
+        expect(canJump([2, 3, 1, 1, 4])).toEqual(true);
+      });
+
+      it("returns false for unreachable last index", () => {
+        expect(canJump([3, 2, 1, 0, 4])).toEqual(false);
+      });
+
+      it("returns true for single element array", () => {
+        expect(canJump([0])).toEqual(true);
+      });
+
+      it("returns true when all elements are large", () => {
+        expect(canJump([10, 10, 10, 10, 10])).toEqual(true);
+      });
+
+      it("returns false for early stopping case", () => {
+        expect(canJump([1, 0, 0, 0])).toEqual(false);
       });
     });
   });
