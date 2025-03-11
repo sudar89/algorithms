@@ -6,6 +6,7 @@ import { rotate } from "../../../src/TopInterview150/ArrayAndString/189";
 import { removeDuplicates26 } from "../../../src/TopInterview150/ArrayAndString/26";
 import { removeElement } from "../../../src/TopInterview150/ArrayAndString/27";
 import { hIndex } from "../../../src/TopInterview150/ArrayAndString/274";
+import { RandomizedSet } from "../../../src/TopInterview150/ArrayAndString/380";
 import { jump } from "../../../src/TopInterview150/ArrayAndString/45";
 import { canJump } from "../../../src/TopInterview150/ArrayAndString/55";
 import { removeDuplicates } from "../../../src/TopInterview150/ArrayAndString/80";
@@ -265,6 +266,21 @@ describe("Top Interview 150", () => {
 
       it("returns 1 when there is only one highly cited paper", () => {
         expect(hIndex([100])).toEqual(1);
+      });
+    });
+
+    describe("Medium 380: Insert Delete GetRandom O(1)", () => {
+      it("", () => {
+        const set = new RandomizedSet();
+
+        expect(set.insert(1)).toBeTruthy();
+        expect(set.remove(2)).toBeFalsy();
+        expect(set.insert(2)).toBeTruthy();
+        set.getRandom();
+        expect(set.remove(1)).toBeTruthy();
+        expect(set.insert(2)).toBeFalsy();
+        set.getRandom();
+        //
       });
     });
   });
