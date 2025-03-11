@@ -3,6 +3,7 @@ import { maxProfit2 } from "../../../src/TopInterview150/ArrayAndString/122";
 import { romanToInt } from "../../../src/TopInterview150/ArrayAndString/13";
 import { majorityElement } from "../../../src/TopInterview150/ArrayAndString/169";
 import { rotate } from "../../../src/TopInterview150/ArrayAndString/189";
+import { productExceptSelf } from "../../../src/TopInterview150/ArrayAndString/238";
 import { removeDuplicates26 } from "../../../src/TopInterview150/ArrayAndString/26";
 import { removeElement } from "../../../src/TopInterview150/ArrayAndString/27";
 import { hIndex } from "../../../src/TopInterview150/ArrayAndString/274";
@@ -281,6 +282,44 @@ describe("Top Interview 150", () => {
         expect(set.insert(2)).toBeFalsy();
         set.getRandom();
         //
+      });
+    });
+
+    describe("Medium 238: Product of Array Except Self", () => {
+      it("calculates the product of array except self for positive numbers", () => {
+        expect(productExceptSelf([1, 2, 3, 4])).toEqual([24, 12, 8, 6]);
+      });
+
+      it("handles arrays containing zero", () => {
+        expect(productExceptSelf([-1, 1, 0, -3, 3])).toEqual([0, 0, 9, 0, 0]);
+      });
+
+      it("handles multiple zeros in the array", () => {
+        expect(productExceptSelf([0, 0, 2, 3])).toEqual([0, 0, 0, 0]);
+      });
+
+      it("handles arrays with a single zero", () => {
+        expect(productExceptSelf([4, 0, 5])).toEqual([0, 20, 0]);
+      });
+
+      it("handles all elements being zero", () => {
+        expect(productExceptSelf([0, 0, 0])).toEqual([0, 0, 0]);
+      });
+
+      it("handles negative numbers correctly", () => {
+        expect(productExceptSelf([-1, -2, -3, -4])).toEqual([-24, -12, -8, -6]);
+      });
+
+      it("handles a single element (edge case)", () => {
+        expect(productExceptSelf([42])).toEqual([1]); // 아무 요소도 제외할 수 없으므로 1이 나와야 함
+      });
+
+      it("handles two elements", () => {
+        expect(productExceptSelf([3, 5])).toEqual([5, 3]);
+      });
+
+      it("handles negative numbers with zero", () => {
+        expect(productExceptSelf([-1, 0, -2, -3])).toEqual([0, -6, 0, 0]);
       });
     });
   });
