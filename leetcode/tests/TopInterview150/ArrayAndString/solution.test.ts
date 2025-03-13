@@ -1,6 +1,7 @@
 import { maxProfit } from "../../../src/TopInterview150/ArrayAndString/121";
 import { maxProfit2 } from "../../../src/TopInterview150/ArrayAndString/122";
 import { romanToInt } from "../../../src/TopInterview150/ArrayAndString/13";
+import { canCompleteCircuit } from "../../../src/TopInterview150/ArrayAndString/134";
 import { majorityElement } from "../../../src/TopInterview150/ArrayAndString/169";
 import { rotate } from "../../../src/TopInterview150/ArrayAndString/189";
 import { productExceptSelf } from "../../../src/TopInterview150/ArrayAndString/238";
@@ -320,6 +321,15 @@ describe("Top Interview 150", () => {
 
       it("handles negative numbers with zero", () => {
         expect(productExceptSelf([-1, 0, -2, -3])).toEqual([0, -6, 0, 0]);
+      });
+    });
+    describe("Medium 134: Gas Station", () => {
+      it("has solution", () => {
+        expect(canCompleteCircuit([1, 2, 3, 4, 6], [3, 4, 5, 1, 2])).toEqual(3);
+      });
+
+      it("has no solution", () => {
+        expect(canCompleteCircuit([2, 3, 4], [3, 4, 3])).toEqual(-1);
       });
     });
   });
