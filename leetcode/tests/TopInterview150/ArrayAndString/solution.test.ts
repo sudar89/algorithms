@@ -2,6 +2,7 @@ import { maxProfit } from "../../../src/TopInterview150/ArrayAndString/121";
 import { maxProfit2 } from "../../../src/TopInterview150/ArrayAndString/122";
 import { romanToInt } from "../../../src/TopInterview150/ArrayAndString/13";
 import { canCompleteCircuit } from "../../../src/TopInterview150/ArrayAndString/134";
+import { candy } from "../../../src/TopInterview150/ArrayAndString/135";
 import { majorityElement } from "../../../src/TopInterview150/ArrayAndString/169";
 import { rotate } from "../../../src/TopInterview150/ArrayAndString/189";
 import { productExceptSelf } from "../../../src/TopInterview150/ArrayAndString/238";
@@ -330,6 +331,38 @@ describe("Top Interview 150", () => {
 
       it("has no solution", () => {
         expect(canCompleteCircuit([2, 3, 4], [3, 4, 3])).toEqual(-1);
+      });
+    });
+
+    describe("Medium 135: Candy", () => {
+      it("handles increasing and decreasing ratings", () => {
+        expect(candy([1, 0, 2])).toEqual(5); // 2-1-2
+        expect(candy([1, 2, 2])).toEqual(4); // 1-2-1
+      });
+
+      it("handles all same ratings", () => {
+        expect(candy([3, 3, 3, 3])).toEqual(4); // 1-1-1-1 (모두 같은 값)
+      });
+
+      it("handles strictly increasing ratings", () => {
+        expect(candy([1, 2, 3, 4, 5])).toEqual(15); // 1-2-3-4-5
+      });
+
+      it("handles strictly decreasing ratings", () => {
+        expect(candy([5, 4, 3, 2, 1])).toEqual(15); // 5-4-3-2-1
+      });
+
+      it("handles single child", () => {
+        expect(candy([4])).toEqual(1); // 단일 요소는 항상 1
+      });
+
+      it("handles two children with different ratings", () => {
+        expect(candy([1, 2])).toEqual(3); // 1-2
+        expect(candy([2, 1])).toEqual(3); // 2-1
+      });
+
+      it("handles peaks and valleys", () => {
+        expect(candy([1, 6, 2, 5, 3, 4])).toEqual(9); // 1-2-1-2-1-2
       });
     });
   });
