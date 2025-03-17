@@ -10,6 +10,7 @@ import { removeDuplicates26 } from "../../../src/TopInterview150/ArrayAndString/
 import { removeElement } from "../../../src/TopInterview150/ArrayAndString/27";
 import { hIndex } from "../../../src/TopInterview150/ArrayAndString/274";
 import { RandomizedSet } from "../../../src/TopInterview150/ArrayAndString/380";
+import { trap } from "../../../src/TopInterview150/ArrayAndString/42";
 import { jump } from "../../../src/TopInterview150/ArrayAndString/45";
 import { canJump } from "../../../src/TopInterview150/ArrayAndString/55";
 import { removeDuplicates } from "../../../src/TopInterview150/ArrayAndString/80";
@@ -363,6 +364,13 @@ describe("Top Interview 150", () => {
 
       it("handles peaks and valleys", () => {
         expect(candy([1, 6, 2, 5, 3, 4])).toEqual(9); // 1-2-1-2-1-2
+      });
+    });
+
+    describe("Hard 42: Trapping Rain Water", () => {
+      it("", () => {
+        expect(trap([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1])).toEqual(6);
+        expect(trap([4, 2, 0, 3, 2, 5])).toEqual(9);
       });
     });
   });
