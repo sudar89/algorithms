@@ -4,6 +4,8 @@ import { maxProfit2 } from "../../../src/TopInterview150/ArrayAndString/122";
 import { romanToInt } from "../../../src/TopInterview150/ArrayAndString/13";
 import { canCompleteCircuit } from "../../../src/TopInterview150/ArrayAndString/134";
 import { candy } from "../../../src/TopInterview150/ArrayAndString/135";
+import { longestCommonPrefix } from "../../../src/TopInterview150/ArrayAndString/14";
+import { reverseWords } from "../../../src/TopInterview150/ArrayAndString/151";
 import { majorityElement } from "../../../src/TopInterview150/ArrayAndString/169";
 import { rotate } from "../../../src/TopInterview150/ArrayAndString/189";
 import { productExceptSelf } from "../../../src/TopInterview150/ArrayAndString/238";
@@ -14,6 +16,7 @@ import { RandomizedSet } from "../../../src/TopInterview150/ArrayAndString/380";
 import { trap } from "../../../src/TopInterview150/ArrayAndString/42";
 import { jump } from "../../../src/TopInterview150/ArrayAndString/45";
 import { canJump } from "../../../src/TopInterview150/ArrayAndString/55";
+import { lengthOfLastWord } from "../../../src/TopInterview150/ArrayAndString/58";
 import { removeDuplicates } from "../../../src/TopInterview150/ArrayAndString/80";
 import { merge } from "../../../src/TopInterview150/ArrayAndString/88";
 
@@ -380,6 +383,43 @@ describe("Top Interview 150", () => {
         expect(intToRoman(3)).toEqual("III");
         expect(intToRoman(58)).toEqual("LVIII");
         expect(intToRoman(1994)).toEqual("MCMXCIV");
+      });
+    });
+
+    describe("Easy 58: Length of Last Word", () => {
+      it("has no space on the end", () => {
+        expect(lengthOfLastWord("Hello World")).toEqual(5);
+        expect(lengthOfLastWord("luffy is still joyboy")).toEqual(6);
+      });
+
+      it("has space on the end", () => {
+        expect(lengthOfLastWord("   fly me   to   the moon  ")).toEqual(4);
+      });
+    });
+
+    describe("Medium 151: Reverse Words in String", () => {
+      it("has 4 spaces and words.", () => {
+        expect(reverseWords("the sky is blue")).toEqual("blue is sky the");
+      });
+      it("has multiple spaces.", () => {
+        expect(reverseWords("  hello world  ")).toEqual("world hello");
+        expect(reverseWords("a good   example")).toEqual("example good a");
+      });
+    });
+
+    describe("Easy 14: Longest Common Prefix", () => {
+      it("has common prefix", () => {
+        expect(longestCommonPrefix(["flower", "flow", "flight"])).toEqual("fl");
+      });
+
+      it("has no common prefix", () => {
+        expect(longestCommonPrefix(["dog", "racecar", "car"])).toEqual("");
+      });
+      it("has one string.", () => {
+        expect(longestCommonPrefix(["a"])).toEqual("a");
+      });
+      it("has one string.", () => {
+        expect(longestCommonPrefix(["ab", "a"])).toEqual("a");
       });
     });
   });
