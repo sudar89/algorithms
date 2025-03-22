@@ -17,6 +17,7 @@ import { trap } from "../../../src/TopInterview150/ArrayAndString/42";
 import { jump } from "../../../src/TopInterview150/ArrayAndString/45";
 import { canJump } from "../../../src/TopInterview150/ArrayAndString/55";
 import { lengthOfLastWord } from "../../../src/TopInterview150/ArrayAndString/58";
+import { convert } from "../../../src/TopInterview150/ArrayAndString/6";
 import { removeDuplicates } from "../../../src/TopInterview150/ArrayAndString/80";
 import { merge } from "../../../src/TopInterview150/ArrayAndString/88";
 
@@ -420,6 +421,20 @@ describe("Top Interview 150", () => {
       });
       it("has one string.", () => {
         expect(longestCommonPrefix(["ab", "a"])).toEqual("a");
+      });
+    });
+
+    describe("Medium 6: Zigzag Conversion", () => {
+      it("returns correct zigzag conversion for 3 rows", () => {
+        expect(convert("PAYPALISHIRING", 3)).toBe("PAHNAPLSIIGYIR");
+      });
+
+      it("returns correct zigzag conversion for 4 rows", () => {
+        expect(convert("PAYPALISHIRING", 4)).toBe("PINALSIGYAHRPI");
+      });
+
+      it("returns input if numRows is 1", () => {
+        expect(convert("ABCD", 1)).toBe("ABCD");
       });
     });
   });
