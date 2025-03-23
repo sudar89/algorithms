@@ -12,6 +12,7 @@ import { productExceptSelf } from "../../../src/TopInterview150/ArrayAndString/2
 import { removeDuplicates26 } from "../../../src/TopInterview150/ArrayAndString/26";
 import { removeElement } from "../../../src/TopInterview150/ArrayAndString/27";
 import { hIndex } from "../../../src/TopInterview150/ArrayAndString/274";
+import { strStr } from "../../../src/TopInterview150/ArrayAndString/28";
 import { RandomizedSet } from "../../../src/TopInterview150/ArrayAndString/380";
 import { trap } from "../../../src/TopInterview150/ArrayAndString/42";
 import { jump } from "../../../src/TopInterview150/ArrayAndString/45";
@@ -435,6 +436,24 @@ describe("Top Interview 150", () => {
 
       it("returns input if numRows is 1", () => {
         expect(convert("ABCD", 1)).toBe("ABCD");
+      });
+    });
+
+    describe("Easy 28: Find the Index of the First Occurrence in a String", () => {
+      it("returns 0 when needle is at the start", () => {
+        expect(strStr("sadbutsad", "sad")).toBe(0);
+      });
+
+      it("returns -1 when needle is not present", () => {
+        expect(strStr("leetcode", "leeto")).toBe(-1);
+      });
+
+      it("returns index when needle appears in the middle", () => {
+        expect(strStr("hello", "ll")).toBe(2);
+      });
+
+      it("returns 0 for empty needle", () => {
+        expect(strStr("abc", "")).toBe(0);
       });
     });
   });
