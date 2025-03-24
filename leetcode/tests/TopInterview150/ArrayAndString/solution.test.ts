@@ -19,6 +19,7 @@ import { jump } from "../../../src/TopInterview150/ArrayAndString/45";
 import { canJump } from "../../../src/TopInterview150/ArrayAndString/55";
 import { lengthOfLastWord } from "../../../src/TopInterview150/ArrayAndString/58";
 import { convert } from "../../../src/TopInterview150/ArrayAndString/6";
+import { fullJustify } from "../../../src/TopInterview150/ArrayAndString/68";
 import { removeDuplicates } from "../../../src/TopInterview150/ArrayAndString/80";
 import { merge } from "../../../src/TopInterview150/ArrayAndString/88";
 
@@ -454,6 +455,61 @@ describe("Top Interview 150", () => {
 
       it("returns 0 for empty needle", () => {
         expect(strStr("abc", "")).toBe(0);
+      });
+    });
+
+    describe("Hard 68: Text Justification", () => {
+      it("", () => {
+        expect(
+          fullJustify(
+            ["This", "is", "an", "example", "of", "text", "justification."],
+            16,
+          ),
+        ).toEqual(["This    is    an", "example  of text", "justification.  "]);
+      });
+
+      it("", () => {
+        expect(
+          fullJustify(
+            ["What", "must", "be", "acknowledgment", "shall", "be"],
+            16,
+          ),
+        ).toEqual(["What   must   be", "acknowledgment  ", "shall be        "]);
+      });
+
+      it("", () => {
+        expect(
+          fullJustify(
+            [
+              "Science",
+              "is",
+              "what",
+              "we",
+              "understand",
+              "well",
+              "enough",
+              "to",
+              "explain",
+              "to",
+              "a",
+              "computer.",
+              "Art",
+              "is",
+              "everything",
+              "else",
+              "we",
+              "do",
+            ],
+            20,
+          ),
+        ).toEqual([
+          "Science  is  what we",
+          "understand      well",
+          "enough to explain to",
+          "a  computer.  Art is",
+          "everything  else  we",
+          "do                  ",
+        ]);
       });
     });
   });
