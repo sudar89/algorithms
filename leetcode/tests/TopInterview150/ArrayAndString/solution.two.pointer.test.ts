@@ -1,4 +1,5 @@
 import { isPalindrome } from "../../../src/TopInterview150/TwoPointer/125";
+import { twoSum } from "../../../src/TopInterview150/TwoPointer/167";
 import { isSubsequence } from "../../../src/TopInterview150/TwoPointer/392";
 
 describe("Top Interview 150", () => {
@@ -28,6 +29,20 @@ describe("Top Interview 150", () => {
 
       it("returns false when s is not a subsequence of t", () => {
         expect(isSubsequence("axc", "ahbgdc")).toBe(false);
+      });
+    });
+
+    describe("Medium 167: Two Sum II", () => {
+      it("should return [1, 2] for [2, 7, 11, 15] and target 9", () => {
+        expect(twoSum([2, 7, 11, 15], 9)).toEqual([1, 2]);
+      });
+
+      it("should return [1, 2] for [-1, 0] and target -1", () => {
+        expect(twoSum([-1, 0], -1)).toEqual([1, 2]);
+      });
+
+      it("should return [1, 3] for [2, 3, 4] and target 6", () => {
+        expect(twoSum([2, 3, 4], 6)).toEqual([1, 3]);
       });
     });
   });
